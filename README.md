@@ -68,14 +68,16 @@ python -m venv venv
 # Activate it:
 source venv/bin/activate         # For Linux/macOS
 venv\Scripts\activate            # For Windows
+```
 ### 📦 Step 3: Install Required Packages
+```bash
 pip install -r requirements.txt
 ```
 
 
 ### 🔐 Step 4: Setup Environment Variables
 Create a .env file in the root directory:
-
+```bash
 # Flask Configuration
 SECRET_KEY=your_flask_secret_key
 
@@ -86,9 +88,9 @@ MAIL_USE_TLS=True
 MAIL_USERNAME=your_email@gmail.com
 MAIL_PASSWORD=your_email_app_password
 MAIL_DEFAULT_SENDER=your_email@gmail.com
+```
 
-
-▶️ Step 5: Run the Flask App
+### ▶️ Step 5: Run the Flask App
 ```bash
 python app.py
 ```
