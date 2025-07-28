@@ -1,0 +1,13 @@
+Flask
+pandas
+numpy
+scikit-learn
+Flask-SQLAlchemy
+Flask-Login
+Flask-WTF
+Werkzeug
+xgboost
+Flask-Mail
+openpyxl
+nltk
+wikipedia

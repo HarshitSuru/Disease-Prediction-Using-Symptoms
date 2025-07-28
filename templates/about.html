@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}About MediCURE | Smart Disease Prediction{% endblock %}
+
+{% block content %}
+<main class="about-page">
+  <section class="hero">
+    <div class="container">
+      <h1>About MediCURE</h1>
+      <p>Your AI-powered health companion for smarter symptom analysis</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <div class="about-card">
+        <h2>Our Mission</h2>
+        <p>MediCURE was created to bridge the gap between initial symptom recognition and professional medical
+          consultation. Our goal is to provide accurate, AI-powered preliminary health assessments that help users make
+          informed decisions about their healthcare.</p>
+      </div>
+
+      <section class="about-page">
+        <div class="container">
+          <h2>How It Works</h2>
+          <div class="process-steps">
+
+            <div class="process-step">
+              <div class="step-number">1</div>
+              <h3>Symptom Input</h3>
+              <p>Enter your current symptoms using natural language or select from our comprehensive symptom database
+              </p>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">2</div>
+              <h3>AI Analysis</h3>
+              <p>Our machine learning model compares your symptoms against thousands of medical cases</p>
+            </div>
+
+            <div class="process-step">
+              <div class="step-number">3</div>
+              <h3>Personalized Results</h3>
+              <p>Receive potential diagnoses with probability scores and recommended next steps</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      <div class="about-card">
+        <h2>Our Technology</h2>
+        <p>MediCURE uses advanced machine learning algorithms trained on:</p>
+        <ul>
+          <li>Over 10,000 verified medical cases</li>
+          <li>500+ distinct symptoms</li>
+          <li>300+ known diseases and conditions</li>
+        </ul>
+        <p>The system continuously improves as more people use it, making predictions increasingly accurate.</p>
+      </div>
+
+      <div class="about-card disclaimer">
+        <h2>Important Disclaimer</h2>
+        <p>MediCURE is not a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice
+          of your physician or other qualified health provider with any questions you may have regarding a medical
+          condition.</p>
+        <p>Our system provides probability estimates based on symptom patterns, but many factors can affect actual
+          diagnosis including medical history, physical examination, and diagnostic tests.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 MediCURE. All rights reserved.</p>
+  </div>
+</footer>
+{% endblock %}

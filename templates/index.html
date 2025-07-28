@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}MediCURE - Smart Disease Prediction{% endblock %}
+
+{% block content %}
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>Smart Disease Prediction</h1>
+      <p>Get instant insights about potential health conditions based on your symptoms</p>
+      <a href="{{ url_for('predict') }}" class="btn primary">Check Your Symptoms</a>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <div class="feature-card">
+        <div class="icon">🩺</div>
+        <h3>Quick Assessment</h3>
+        <p>Enter your symptoms and get potential diagnoses in seconds</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🤖</div>
+        <h3>AI-Powered</h3>
+        <p>Machine learning algorithms analyze your symptoms</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">💊</div>
+        <h3>Treatment Info</h3>
+        <p>Get home remedies and treatment suggestions</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 MediCURE. All rights reserved.</p>
+  </div>
+</footer>
+{% endblock %}

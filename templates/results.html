@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Results | MediCURE{% endblock %}
+
+{% block content %}
+<main class="results">
+  <div class="container">
+
+    <h1>Possible Conditions</h1>
+    <p>Based on your symptoms, here are the most likely conditions:</p>
+
+    <div class="results-grid">
+      {% for condition in conditions %}
+      <div class="condition-card">
+        <h3>{{ condition.name }}</h3>
+        <p>{{ condition.desc }}</p>
+
+        <div class="matching-symptoms">
+          <h4>Matching Symptoms:</h4>
+          <ul>
+            {% for symptom in condition.matching_symptoms %}
+            <li>{{ symptom }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <form action="{{ url_for('treatment') }}" method="post">
+          <input type="hidden" name="dis" value="{{ condition.name }}">
+          <button type="submit" class="btn small">View Treatment</button>
+        </form>
+      </div>
+      {% endfor %}
+    </div>
+
+
+
+    <div class="disclaimer">
+      <p><strong>Note:</strong> These results represent possible matches based on your reported symptoms. The
+        probability scores indicate how closely your symptoms match typical cases of each condition. This is not a
+        definitive diagnosis.</p>
+    </div>
+  </div>
+</main>
+{% endblock %}

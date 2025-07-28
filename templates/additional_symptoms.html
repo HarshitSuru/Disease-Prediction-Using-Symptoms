@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Additional Symptoms | MediCURE{% endblock %}
+
+{% block content %}
+<main class="additional-symptoms">
+  <div class="container">
+    <h1>Do you have any of these additional symptoms?</h1>
+
+    <div class="selected-symptoms">
+      <h3>Your selected symptoms:</h3>
+      <ul class="symptom-tags">
+        {% for symptom in original_symptoms %}
+        <li class="symptom-tag">{{ symptom }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <p>Based on your symptoms, you might also experience:</p>
+
+    <form action="{{ url_for('process_additional') }}" method="post">
+      <div class="symptoms-list">
+        {% for idx, symptom in additional_symptoms %}
+        <div class="symptom-checkbox">
+          <input type="checkbox" id="symptom-{{idx}}" name="symptoms" value="{{symptom}}">
+          <label for="symptom-{{idx}}">{{symptom}}</label>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="form-actions">
+        <a href="{{ url_for('predict') }}" class="btn secondary">Back</a>
+        <button type="submit" class="btn primary">Get Results</button>
+      </div>
+    </form>
+  </div>
+</main>
+{% endblock %}

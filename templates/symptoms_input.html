@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+
+{% block title %}Symptom Checker | MediCURE{% endblock %}
+
+{% block content %}
+<style>
+  /* Container for consistent padding */
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    background: #f9faff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgb(0 0 0 / 0.05);
+  }
+
+  /* Main heading and paragraph */
+  h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 0.3rem;
+    color: #1a202c;
+  }
+
+  p {
+    font-size: 1.15rem;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+
+  /* Symptoms checkbox list - grid layout */
+  .symptoms-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Each symptom checkbox container */
+  .symptom-checkbox {
+    background: white;
+    padding: 0.8rem 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a202c;
+  }
+
+  /* Checkbox input styling */
+  .symptom-checkbox input[type="checkbox"] {
+    margin-right: 0.9rem;
+    cursor: pointer;
+    transform: scale(1.2);
+    accent-color: #4a90e2;
+    /* Modern colored checkboxes */
+  }
+
+  /* Hover effect */
+  .symptom-checkbox:hover {
+    background-color: #e4f0ff;
+    box-shadow: 0 6px 18px rgba(74, 144, 226, 0.25);
+  }
+
+  /* Checkbox checked state styling */
+  .symptom-checkbox input[type="checkbox"]:checked+* {
+    font-weight: 700;
+    color: #0071f3;
+  }
+
+  /* Form actions container */
+  .form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Buttons styling */
+  .btn {
+    padding: 0.65rem 1.6rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    user-select: none;
+  }
+
+  .btn.primary {
+    background-color: #0071f3;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 113, 243, 0.4);
+  }
+
+  .btn.primary:hover {
+    background-color: #005bb5;
+    box-shadow: 0 8px 20px rgba(0, 91, 181, 0.6);
+  }
+
+  .btn.secondary {
+    background-color: #e2e8f0;
+    color: #1a202c;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn.secondary:hover {
+    background-color: #cbd5e1;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    .symptoms-list {
+      grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+</style>
+<main class="symptom-input-page">
+  <div class="container">
+    <h1>Describe Your Symptoms</h1>
+    <p>Enter your symptoms, separated by commas (e.g., fever, cough, headache).</p>
+
+    <form action="{{ url_for('process_symptoms') }}" method="post">
+      <div class="form-group">
+        <label for="symptoms">Your Symptoms:</label>
+        <textarea class="form-control" id="symptoms" name="symptoms" rows="4"
+          placeholder="e.g., high fever, persistent cough, sore throat" required></textarea>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn primary">Find Potential Issues</button>
+      </div>
+    </form>
+  </div>
+</main>
+{% endblock %}

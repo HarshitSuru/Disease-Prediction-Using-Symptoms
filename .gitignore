@@ -1,0 +1,28 @@
+# Ignore environment variable files
+.env
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore virtual environments
+venv/   
+env/
+pyvenv.cfg
+
+# Ignore model files and saved weights (if generated during training)
+model_saved/
+
+# Ignore Excel files if not needed
+*.xlsx
+
+# Ignore VSCode settings (optional)
+.vscode/
+
+# Ignore Mac junk files (optional)
+.DS_Store
+
+*.pkl
+*.h5

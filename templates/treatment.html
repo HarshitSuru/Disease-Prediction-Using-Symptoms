@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Treatment | MediCURE{% endblock %}
+
+{% block content %}
+<main class="treatment">
+  <div class="container">
+    <h1>Treatment for {{ condition }}</h1>
+    <p>Here are some home remedies and treatment options:</p>
+
+    <div class="treatment-content">
+      <div class="remedies">
+        <h2>Home Remedies</h2>
+        <ul>
+          {% for remedy in remedies %}
+          <li>{{ remedy }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="when-to-see-doctor">
+        <h2>When to See a Doctor</h2>
+        <p>Consult a healthcare professional if:</p>
+        <ul>
+          <li>Symptoms persist for more than 3 days</li>
+          <li>You experience severe pain</li>
+          <li>You have difficulty breathing</li>
+          <li>Your condition worsens</li>
+        </ul>
+      </div>
+    </div>
+
+    <a href="{{ url_for('home') }}" class="btn primary">Back to Home</a>
+  </div>
+</main>
+{% endblock %}
