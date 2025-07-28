@@ -63,23 +63,19 @@ cd medicure-disease-prediction
 ```
 
 ### 🧪 Step 2: Create a Virtual Environment
+```bash
 python -m venv venv
 # Activate it:
 source venv/bin/activate         # For Linux/macOS
 venv\Scripts\activate            # For Windows
-
-
 ### 📦 Step 3: Install Required Packages
-
 pip install -r requirements.txt
+```
 
 
 ### 🔐 Step 4: Setup Environment Variables
 Create a .env file in the root directory:
 
-env
-Copy
-Edit
 # Flask Configuration
 SECRET_KEY=your_flask_secret_key
 
