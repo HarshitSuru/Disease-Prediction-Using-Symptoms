@@ -81,6 +81,9 @@ Create a .env file in the root directory:
 # Flask Configuration
 SECRET_KEY=your_flask_secret_key
 
+# Database URI
+SQLALCHEMY_DATABASE_URI=sqlite:///users.db
+
 # Mail Configuration
 MAIL_SERVER=smtp.gmail.com
 MAIL_PORT=587
