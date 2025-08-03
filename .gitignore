@@ -15,8 +15,7 @@ pyvenv.cfg
 # Ignore model files and saved weights (if generated during training)
 model_saved/
 
-# Ignore Excel files if not needed
-*.xlsx
+
 
 # Ignore VSCode settings (optional)
 .vscode/
@@ -24,5 +23,3 @@ model_saved/
 # Ignore Mac junk files (optional)
 .DS_Store
 
-*.pkl
-*.h5
