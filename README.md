@@ -58,8 +58,8 @@ Healthcare begins with awareness. MediCURE is built to empower users with a quic
 
 ### 🔁 Step 1: Clone the Repository
 ```bash
-git clone https://github.com/HarshitSuru/medicure-disease-prediction.git
-cd medicure-disease-prediction
+git clone https://github.com/HarshitSuru/Disease-Prediction-Using-Symptoms.git
+cd MediCURE-Disease-Prediction-based-on-Symptoms
 ```
 
 ### 🧪 Step 2: Create a Virtual Environment
